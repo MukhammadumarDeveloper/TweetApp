@@ -1,0 +1,34 @@
+<mat-card>
+    <mat-spinner *ngIf="isLoading"></mat-spinner>
+    <form (submit)="onSavePost(postForm)" #postForm="ngForm" *ngIf="!isLoading">
+        <mat-form-field>
+            <input 
+            matInput 
+            type="text"
+            placeholder="title" 
+            name="title"
+            [ngModel]="post?.title"
+            required
+            minlength="3"
+            #title="ngModel">
+            <mat-error *ngIf="title.invalid">Iltimos habar sarlavhasini kiriting</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <textarea matInput rows="4" 
+            placeholder="content"
+            name="content"
+            [ngModel]="post?.content"
+            required
+            minlength="6"
+            #content="ngModel"></textarea>
+            <mat-error *ngIf="content.invalid">Iltimos habar matnini kiriting</mat-error>
+        </mat-form-field>
+        <button 
+        mat-raised-button
+        color="accent"
+        type="submit">
+        <span *ngIf="mode=='edit'">Maqolani o'zgartirish</span>
+        <span *ngIf="mode=='create'">Maqolani saqlash</span>
+    </button>
+    </form>
+</mat-card>
