@@ -4,8 +4,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## To run this project you should:
 
-Open cmd command and type npm start:server
-Open new cmd window and type ng serve
+Open cmd command and type `npm start:server`
+Open new cmd window and type `ng serve`
 Running and enjoy!
 
 ## Development server
